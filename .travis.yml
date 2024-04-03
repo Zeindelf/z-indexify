@@ -1,12 +1,12 @@
 language: node_js
 node_js:
-  - '14.15.1'
+  - '20.11.1'
 install:
-  - yarn
+  - npm
 cache:
-  yarn: true
+  npm: true
   directories:
     - node_modules
 scripts:
-  - yarn lint && yarn test
+  - npm run lint && npm run test
 after_success: npx codecov

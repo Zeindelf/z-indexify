@@ -1,17 +1,18 @@
 <div align="center">
-<h1>Z-Indexify</h1>
+<h1 style="color: #06b6d4">Z-Indexify</h1>
 
 [![NPM][npm-badge]][npm]
 [![Build Status][build-badge]][build]
 [![Codecov][codecov-badge]][codecov]
 [![Bundle Size][bundle-size-badge]][bundle-size]
-[![David][deps-badge]][deps]
 [![Known Vulnerabilities][snyk-badge]][snyk]
 [![CodeFactor][codefactor-badge]][codefactor]
-[![Total alerts][lgtm-badge]][lgtm]
 [![MIT License][license-badge]][license]
 
 <p>A sane way to manage CSS z-indexes across application</p>
+
+Works with [Styled Components](https://styled-components.com) and [TailwindCSS](https://tailwindcss.com/)
+
 <hr />
 </div>
 
@@ -24,20 +25,75 @@
 ## Install
 
 ```bash
-# Yarn
-yarn add z-indexify
-
 # NPM
 npm install --save z-indexify
+
+# Yarn
+yarn add z-indexify
 ```
 
 ## Usage
+### With Styled Components
 
 ```js
+// In your theme.ts used on ThemeProvider
 import { zIndexify } from 'z-indexify';
+
+const zIndex = zIndexify(['header', 'overlay', 'sidebar']);
+const theme = {
+  // others...
+  zIndex,
+};
+
+// And on Styled
+const Header = styled.header`
+  z-index: ${({ theme }) => theme.zIndex.header}; /** z-index: 100; */
+`;
 ```
 
-### (WIP)
+### With TailwindCSS
+
+```js
+// In your tailwind.config.ts
+import type { Config } from 'tailwindcss';
+import { zIndexify } from 'z-indexify';
+
+const zIndex = zIndexify(['header', 'overlay', 'sidebar'], {
+  minIndex: 500,
+});
+
+const config: Config = {
+  content: [...],
+  theme: {
+    extend: {
+      // ...your configs
+      zIndex,
+    }
+  },
+};
+
+export default config;
+```
+
+![image](/assets/intellisense.gif)
+
+## API
+
+- ### zIndexify(labels[, options]])
+
+  - **labels**
+    - Type: `array`
+    - Name of your z-indexes _in asc order_
+  - **options**
+    - Type: `object`
+    - Configuration options if you need
+
+- ### options
+  Param | Type | Description | Default | e.g.
+  :--- | :--- | :--- | :--- | :---
+  `minIndex`| `number` | Index starts of | `100` |  `{ minIndex: 300 }`  starts with: `z-index: 300`
+  `inverse` | `boolean` | Invert array values order | `false` | `['foo', 'bar']` will produce: `{ foo: 101, bar: 100 } `
+  `step` | `number` | The gap between number | `1` | `{ step: 10 }` creates: `{ 100, 110, 120, 130, ... }`
 
 ## Contributing
 
@@ -50,29 +106,23 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 <!-- GIT Variables -->
 [node]: https://nodejs.org
 
-[npm]: https://www.npmjs.com/package/vtex-api
-[npm-badge]: https://img.shields.io/npm/v/vtex-api.svg
+[npm]: https://www.npmjs.com/package/z-indexify
+[npm-badge]: https://img.shields.io/npm/v/z-indexify.svg
 
-[build]: https://travis-ci.org/zeindelf/vtex-api
-[build-badge]: https://img.shields.io/travis/zeindelf/vtex-api.svg?style=flat-square
+[build]: https://travis-ci.org/zeindelf/z-indexify
+[build-badge]: https://img.shields.io/travis/zeindelf/z-indexify.svg?style=flat-square
 
-[codecov]: https://codecov.io/gh/Zeindelf/vtex-api
-[codecov-badge]: https://codecov.io/gh/Zeindelf/vtex-api/branch/master/graph/badge.svg
+[codecov]: https://codecov.io/gh/Zeindelf/z-indexify
+[codecov-badge]: https://codecov.io/gh/Zeindelf/z-indexify/branch/master/graph/badge.svg
 
-[bundle-size]: https://bundlephobia.com/result?p=vtex-api
-[bundle-size-badge]: https://badgen.net/bundlephobia/minzip/vtex-api
+[bundle-size]: https://bundlephobia.com/result?p=z-indexify
+[bundle-size-badge]: https://badgen.net/bundlephobia/minzip/z-indexify
 
-[deps]: https://github.com/Zeindelf/vtex-api
-[deps-badge]: https://david-dm.org/zeindelf/vtex-api.svg
+[snyk]: https://snyk.io/test/npm/z-indexify
+[snyk-badge]: https://snyk.io/test/npm/z-indexify/badge.svg
 
-[snyk]: https://snyk.io/test/npm/vtex-api
-[snyk-badge]: https://snyk.io/test/npm/vtex-api/badge.svg
+[codefactor]: https://www.codefactor.io/repository/github/zeindelf/z-indexify
+[codefactor-badge]: https://www.codefactor.io/repository/github/zeindelf/z-indexify/badge
 
-[codefactor]: https://www.codefactor.io/repository/github/zeindelf/vtex-api
-[codefactor-badge]: https://www.codefactor.io/repository/github/zeindelf/vtex-api/badge
-
-[lgtm]: https://lgtm.com/projects/g/Zeindelf/vtex-api/alerts/
-[lgtm-badge]: https://img.shields.io/lgtm/alerts/g/Zeindelf/vtex-api.svg?logo=lgtm&logoWidth=18
-
-[license]: https://github.com/zeindelf/vtex-api/blob/master/LICENSE
-[license-badge]: https://img.shields.io/npm/l/vtex-api.svg?style=flat-square
+[license]: https://github.com/zeindelf/z-indexify/blob/master/LICENSE
+[license-badge]: https://img.shields.io/npm/l/z-indexify.svg?style=flat-square

@@ -83,7 +83,12 @@ export default config;
 
   - **labels**
     - Type: `array`
-    - Name of your z-indexes _in asc order_
+    - Name of your z-indexes _in asc order_.
+    - To change order values, simple reorder the array values. e.g.:
+      ```js
+      ['foo', 'bar', 'baz'] //=> foo: 100, bar: 101, baz: 102
+      ['bar', 'baz', 'foo'] //=> bar: 100, baz: 101, foo: 103
+      ```
   - **options**
     - Type: `object`
     - Configuration options if you need

@@ -1,2 +1,2 @@
-/* eslint-disable import/prefer-default-export */
+export default './zIndexify';
 export { default as zIndexify } from './zIndexify';

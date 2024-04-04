@@ -7,6 +7,7 @@
 [![Bundle Size][bundle-size-badge]][bundle-size]
 [![Known Vulnerabilities][snyk-badge]][snyk]
 [![CodeFactor][codefactor-badge]][codefactor]
+[![OpenSSF Scorecard][openssf-badge]][openssf]
 [![MIT License][license-badge]][license]
 
 
@@ -129,6 +130,9 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 [codefactor]: https://www.codefactor.io/repository/github/zeindelf/z-indexify
 [codefactor-badge]: https://www.codefactor.io/repository/github/zeindelf/z-indexify/badge
+
+[openssf]: https://securityscorecards.dev/viewer/?uri=github.com/zeindelf/z-indexify
+[openssf-badge]: https://api.securityscorecards.dev/projects/github.com/zeindelf/z-indexify/badge
 
 [license]: https://github.com/zeindelf/z-indexify/blob/master/LICENSE
 [license-badge]: https://img.shields.io/npm/l/z-indexify.svg?style=flat-square

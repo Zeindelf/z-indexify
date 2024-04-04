@@ -2,6 +2,7 @@
 # Stacks detected: deps:node:.,test:jest:
 version: 2.1
 orbs:
+  codecov: codecov/codecov@4.0.1
   node: circleci/node@5
 jobs:
   test-node:
@@ -58,3 +59,8 @@ workflows:
     # - deploy:
     #     requires:
     #       - build-node
+  upload-to-codecov:
+    jobs:
+      - node/test:
+          post-steps:
+            - codecov/upload

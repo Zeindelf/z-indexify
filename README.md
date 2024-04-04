@@ -119,7 +119,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [build-badge]: https://dl.circleci.com/status-badge/img/circleci/6tzhy4jF6JhkiZf8qsueZH/4JS5VCPifDN7KwCHmauWWR/tree/main.svg?style=shield
 
 [codecov]: https://codecov.io/gh/Zeindelf/z-indexify
-[codecov-badge]: https://codecov.io/gh/Zeindelf/z-indexify/branch/master/graph/badge.svg
+[codecov-badge]: https://codecov.io/gh/Zeindelf/z-indexify/graph/badge.svg?token=XVB2P9OQ9L
 
 [bundle-size]: https://bundlephobia.com/result?p=z-indexify
 [bundle-size-badge]: https://badgen.net/bundlephobia/minzip/z-indexify

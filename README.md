@@ -9,6 +9,7 @@
 [![CodeFactor][codefactor-badge]][codefactor]
 [![MIT License][license-badge]][license]
 
+
 <p>A sane way to manage CSS z-indexes across application</p>
 
 Works with [Styled Components](https://styled-components.com) and [TailwindCSS](https://tailwindcss.com/)
@@ -114,8 +115,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [npm]: https://www.npmjs.com/package/z-indexify
 [npm-badge]: https://img.shields.io/npm/v/z-indexify.svg
 
-[build]: https://travis-ci.org/zeindelf/z-indexify
-[build-badge]: https://img.shields.io/travis/zeindelf/z-indexify.svg?style=flat-square
+[build]: https://dl.circleci.com/status-badge/redirect/circleci/6tzhy4jF6JhkiZf8qsueZH/4JS5VCPifDN7KwCHmauWWR/tree/main
+[build-badge]: https://dl.circleci.com/status-badge/img/circleci/6tzhy4jF6JhkiZf8qsueZH/4JS5VCPifDN7KwCHmauWWR/tree/main.svg?style=shield
 
 [codecov]: https://codecov.io/gh/Zeindelf/z-indexify
 [codecov-badge]: https://codecov.io/gh/Zeindelf/z-indexify/branch/master/graph/badge.svg

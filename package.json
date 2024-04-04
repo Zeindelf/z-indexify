@@ -1,6 +1,6 @@
 {
   "name": "z-indexify",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A sane way to manage CSS z-indexes",
   "main": "lib/index.js",
   "module": "esm/index.js",

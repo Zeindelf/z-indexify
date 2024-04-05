@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     branches:
-      - release
+      - main
       - beta
       - alpha
 env:
@@ -23,7 +23,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - run: npm ci
-      - run: npm test
+      - run: npm run test
       - run: npm run build --if-present
   publish:
     needs: test

@@ -2,9 +2,11 @@ name: Codecov
 
 on:
   push:
-    branches: [main, release, release-beta]
-  pull_request:
-    branches: [main, release, release-beta]
+    branches:
+      - main
+      - release
+      - beta
+      - alpha
   schedule:
     # Execute at 12:00 PM, only on Sunday
     - cron: "00 12 * * 1"

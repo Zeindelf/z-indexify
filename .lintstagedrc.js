@@ -1,5 +1,5 @@
 module.exports = {
-  '**/*.{js,ts}': [
+  '**/*.ts': [
     'npm run lint',
     'jest --verbose --bail --findRelatedTests',
   ],

@@ -23,7 +23,8 @@
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch --maxWorkers=25%",
     "test": "jest --maxWorkers=50%",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -58,6 +59,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
+    "@semantic-release/git": "^10.0.1",
     "@types/jest": "^29.5.12",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
     "@typescript-eslint/parser": "^7.5.0",

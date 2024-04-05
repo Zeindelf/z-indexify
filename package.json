@@ -24,7 +24,7 @@
     "test:watch": "jest --watch --maxWorkers=25%",
     "test": "jest --maxWorkers=50%",
     "prepublish": "npm run build",
-    "prepare": "husky"
+    "prepare": "husky || true"
   },
   "repository": {
     "type": "git",

@@ -6,7 +6,8 @@ on:
   pull_request:
     branches: [main, release, release-beta]
   schedule:
-    - cron: "46 11 * * 0"
+    # Execute at 12:00 PM, only on Sunday
+    - cron: "00 12 * * 1"
 
 jobs:
   analyze:
@@ -20,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ]
+        language: [javascript]
 
     steps:
       - name: Checkout

@@ -1,20 +1,31 @@
 name: Codecov
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main, release, release-beta]
+  pull_request:
+    branches: [main, release, release-beta]
+  schedule:
+    # Execute at 12:00 PM, only on Sunday
+    - cron: "00 12 * * 1"
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v4.0.2
         with:
           node-version: 20
+
       - name: Install dependencies
         run: npm install
+
       - name: Run tests and collect coverage
         run: npm run test:coverage
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
